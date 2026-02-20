@@ -16,6 +16,10 @@
     --font-primary: 'Inter', sans-serif;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -639,6 +643,129 @@ a {
 .fade-in-section.visible {
     opacity: 1;
     transform: none;
+}
+
+.fade-in-section.visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* Comparison Section */
+.comparison {
+    padding: 80px 20px;
+    background: #fff;
+    width: 100%;
+}
+
+.comparison-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.comparison-column {
+    flex: 1;
+    min-width: 280px;
+    /* Reduced to fit small mobile screens */
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.comparison-column.pain {
+    background: #fff5f5;
+    border: 1px solid #ffebeb;
+}
+
+.comparison-column.pleasure {
+    background: #f0f7ff;
+    border: 2px solid var(--accent-color);
+    transform: scale(1.05);
+    /* Slight pop for the winning side */
+    box-shadow: 0 10px 30px rgba(67, 66, 255, 0.15);
+}
+
+.comparison-header {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid;
+    padding-bottom: 20px;
+}
+
+.comparison-column.pain .comparison-header {
+    border-color: #ffcccc;
+}
+
+.comparison-column.pleasure .comparison-header {
+    border-color: var(--accent-color);
+}
+
+.comparison-header h3 {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+}
+
+.comparison-header p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+}
+
+.comparison-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.comparison-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.comparison-list .icon {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    min-width: 30px;
+}
+
+.comparison-list strong {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: #111;
+}
+
+.comparison-list p {
+    font-size: 0.95rem;
+    color: #555;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Responsive adjust for comparison */
+@media (max-width: 768px) {
+    .comparison-column.pleasure {
+        transform: none;
+        /* Reset scale on mobile */
+        order: 0;
+        /* Keep natural order (Pain -> Pleasure) on mobile */
+    }
+
+    .comparison-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .comparison-column {
+        width: 100%;
+        max-width: 500px;
+    }
 }
 
 /* Booking Modal */
